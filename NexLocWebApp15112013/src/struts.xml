@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.devMode" value="true" />
+<package name="default" extends="json-default">
+
+ 	  <action name="*Usuario" class="pe.com.nextel.action.UsuarioAction" method="{1}">
+   		<result name="modificar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="listarMonitoreados" type="json"/>
+   		<result name="localizar" type="json"/>
+   		<result name="obtener" type="json"/>
+   		<result name="perfil" type="json"/>
+   		<result name="verlog" >/user/index.jsp</result>
+ 	  </action>  
+ 	  
+ 	  <action name="*PuntoInteres" class="pe.com.nextel.action.PuntoInteresAction" method="{1}">
+   		<result name="modificar" type="json"/>
+   		<result name="modificarIE" type="json">
+   		    <param name="contentType">text/json</param>
+   		</result>
+   		<result name="eliminar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="registrar" type="json" />
+   		<result name="registrarIE" type="json">
+   		    <!-- este parámetro es necesario para que la carga de archivos funcione con IE8 -->
+   		    <param name="contentType">text/json</param>
+   		</result>
+   		<result name="obtener" type="json"/>
+   		<result name="buscar" type="json"/>
+   		<result name="mapa" type="json"/>
+   		<result name="listarProvincias" type="json"/>
+   		<result name="listarDepartamentos" type="json"/>
+   		<result name="listarDistritos" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Geocerca" class="pe.com.nextel.action.GeocercaAction" method="{1}">
+   		<result name="eliminar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="registrar" type="json"/>
+   		<result name="modificar" type="json" />
+   		<result name="obtener" type="json"/>
+   		<result name="historial" type="json"/>
+   		<result name="detalle" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Categoria" class="pe.com.nextel.action.CategoriaAction" method="{1}">
+   		<result name="modificar" type="json"/>
+   		<result name="eliminar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="registrar" type="json"/>
+   		<result name="obtener" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Handset" class="pe.com.nextel.action.HandsetAction" method="{1}">
+   		<result name="modificar" type="json"/>
+   		<result name="eliminar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="registrar" type="json"/>
+   		<result name="obtener" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Grupo" class="pe.com.nextel.action.GrupoAction" method="{1}">
+   		<result name="modificar" type="json"/>
+   		<result name="eliminar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="registrar" type="json"/>
+   		<result name="obtener" type="json"/>
+   		<result name="localizar" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Tracking" class="pe.com.nextel.action.TrackingAction" method="{1}">
+   		<result name="cancelar" type="json"/>
+   		<result name="listar" type="json"/>
+   		<result name="historial" type="json"/>
+   		<result name="registrar" type="json"/>
+   		<result name="obtener" type="json"/>
+   		<result name="obtenerFiltros" type="json"/>
+   		<result name="filtrar" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Cuenta" class="pe.com.nextel.action.CuentaAction" method="{1}">
+   		<result name="obtenerHorario" type="json"/>
+   		<result name="registrarHorario" type="json"/>
+ 	  </action>
+ 	  
+ 	  <action name="*Seguridad" class="pe.com.nextel.action.SeguridadAction" method="{1}">
+   		<result name="success" >/user/index.jsp</result>
+   		<result name="error">loginerror.jsp</result>
+   		<result name="logout">logout.jsp</result>
+ 	  </action>
+ 	  
+ 	  <action name="*Reporte" class="pe.com.nextel.action.ReporteAction" method="{1}">
+   		<result name="localizacion" type="json"/>
+   		<result name="geocerca" type="json"/>
+   		<result name="bloqueados" type="json"/>
+   		<result name="transacciones" type="json"/>
+   		<result name="mlp" type="json"/>
+ 	  </action>
+ 	  
+</package>
+
+</struts>

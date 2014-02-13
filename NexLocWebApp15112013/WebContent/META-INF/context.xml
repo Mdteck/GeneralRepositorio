@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+   <Resource 
+    name="jdbc/nexlocDataSource" 
+    auth="Container" 
+    type="javax.sql.DataSource"
+    maxActive="40" 
+    maxIdle="30" 
+    maxWait="60000"
+    username="sa" 
+    password="123456" 
+    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerConnectionPoolDataSource"
+    url="jdbc:sqlserver://Yamile;databaseName=DB_NEXLOC;"/>
+</Context>
+<!--<Context >
+   <Resource 
+    name="jdbc/nexlocDataSource" 
+    auth="Container" 
+    type="javax.sql.DataSource"
+    maxActive="40" 
+    maxIdle="30" 
+    maxWait="60000"
+    username="usr_nexloc" 
+    password="N3xl0c" 
+    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerConnectionPoolDataSource"
+    url="jdbc:sqlserver://172.24.249.10:1433;databaseName=DB_NEXLOC;"/>
+</Context>-->
+<!-- <Context > 
+   <Resource 
+    name="jdbc/nexlocDataSource" 
+    auth="Container" 
+    type="javax.sql.DataSource"
+    maxActive="40" 
+    maxIdle="30" 
+    maxWait="60000"
+    username="usr_nexloc" 
+    password="N3xl0c" 
+    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    url="jdbc:sqlserver://perversa.devos.inc:1433;databaseName=DB_NEXLOC;"/>
+</Context> -->
