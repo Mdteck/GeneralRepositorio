@@ -5,7 +5,10 @@ import java.io.InputStream;
 import java.io.StringReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.StringTokenizer;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -14,10 +17,14 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+
+
 //import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import pe.com.nextel.bean.ConfiguracionDTO;
 
 /**
  * 
@@ -343,6 +350,78 @@ public class ParserUtil {
 		 String f = "";
 		 f = sdf.format(date);
 		 return f;
+	}
+
+	public static ConfiguracionDTO mapParametro(String parametro, String valor, ConfiguracionDTO config){
+		
+		if(parametro.equals("ESTADO_APROV")){
+			config.setEstadoAprov(valor);
+		}else
+			if(parametro.equals("TCE_APROV")){
+				config.setTceAprov(valor);
+			}else
+				if(parametro.equals("TCC_APROV")){
+					config.setTccAprov(valor);
+				}else
+					if(parametro.equals("URL_WDM_APROV")){
+						config.setUrlAprov(valor);
+					}else
+						if(parametro.equals("MAIL_APROV")){
+							config.setCorreoAprov(valor);
+						}else
+							if(parametro.equals("COD_SERV_LOC")){
+								config.setCslAprov(valor);
+							}else
+								if(parametro.equals("COD_SERV_NAV")){
+									config.setCsnAprov(valor);
+								}else
+									if(parametro.equals("UPSID")){
+										config.setUpsidAprov(valor);
+									}
+		return config;
+		
+	}
+	
+	public static String unmapParametro(String parametro, ConfiguracionDTO config){
+		
+		if(parametro.equals("ESTADO_APROV")){
+			return config.getEstadoAprov();
+		}else
+			if(parametro.equals("TCE_APROV")){
+				return config.getTceAprov();
+			}else
+				if(parametro.equals("TCC_APROV")){
+					return config.getTccAprov();
+				}else
+					if(parametro.equals("URL_WDM_APROV")){
+						return config.getUrlAprov();
+					}else
+						if(parametro.equals("MAIL_APROV")){
+							return config.getCorreoAprov();
+						}else
+							if(parametro.equals("COD_SERV_LOC")){
+								return config.getCslAprov();
+							}else
+								if(parametro.equals("COD_SERV_NAV")){
+									return config.getCsnAprov();
+								}else
+									if(parametro.equals("UPSID")){
+										return config.getUpsidAprov();
+									}
+		
+		return "";
+	}
+	
+	public static List<String> listarCadena(String cadena){
+		
+		List<String> lista = new ArrayList<String>();
+		StringTokenizer tokens = new StringTokenizer(cadena, ";");
+		
+		while(tokens.hasMoreTokens()){
+			lista.add(tokens.nextToken());
+		}
+		
+		return lista;
 	}
 
 }
